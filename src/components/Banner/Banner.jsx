@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='relative w-full lg:h-screen overflow-hidden mb-14'>
+        <div className='relative w-full lg:h-screen overflow-hidden'>
             <div className=''>
                 <img className='w-full h-full bg-cover bg-center' src="https://i.ibb.co.com/8nLMp66G/Banner-min.jpg" alt="" />
             </div>
