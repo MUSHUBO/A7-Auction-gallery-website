@@ -10,20 +10,26 @@ const Auction = ({ auction, handleFavorite }) => {
                 <table className="table">
                     <tbody>
                         <tr>
-                            <th className=''>
-                                <img src={auction.image} alt="Camera" className='w-20 h-20 object-cover rounded-lg flex-shrink-0' />
-                            </th>
-                            <td> {auction.title} </td>
-                            <div className='flex items-center justify-end gap-14 pr-10'>
-                                <td> {auction.currentBidPrice} </td>
-                                <td> {auction.timeLeft} </td>
-                                <button onClick={() => handleFavorite(auction)}><GoHeart size={25} /></button>
-                            </div>
+                            <td>
+                                <img src={auction.image} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                            </td>
+                            <td>{auction.title}</td>
+
+                            <td colSpan={3}>
+                                <div className="flex items-center justify-end gap-14 pr-10">
+                                    <span>{auction.currentBidPrice}</span>
+                                    <span>{auction.timeLeft}</span>
+                                    <button onClick={() => handleFavorite(auction)}>
+                                        <GoHeart size={25} />
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
     );
 };
 

@@ -14,7 +14,7 @@ function App() {
   const handleFavorite = (favorite) => {
     setFavoriteItem([...favoriteItems, favorite]);
   }
-  console.log(favoriteItems);
+  // console.log(favoriteItems);
 
   return (
     <>
@@ -34,7 +34,7 @@ function App() {
 
             {/* Active Auctions Section */}
             <div className="left-container w-[70%] bg-white rounded-3xl">
-              <div className='table'>
+              <table className='table'>
                 <thead>
                   <tr>
                     <th className='pr-64'>Items</th>
@@ -43,7 +43,7 @@ function App() {
                     <th>Bid Now</th>
                   </tr>
                 </thead>
-              </div>
+              </table>
 
               <Suspense fallback={'Loading...'}>
                 <Auctions handleFavorite={handleFavorite}></Auctions>
@@ -56,12 +56,14 @@ function App() {
               <h3 className='pt-6 pb-4 border-b font-medium text-3xl flex items-center justify-center'><p><GoHeart /></p><p className=''>Favorite Items</p></h3>
 
               <div className='border-b p-6 space-y-5'>
-                {/* <p className='text-2xl font-medium'>No favorites yet</p>
-                <p>Click the heart icon on any item to add it to your favorites</p> */}
+                <div className='item-massage'>
+                  <p className='text-2xl font-medium'>No favorites yet</p>
+                  <p>Click the heart icon on any item to add it to your favorites</p>
+                </div>
 
                 {
                   favoriteItems.map(favoriteItem =>
-                    <div className='flex items-center gap-4 p-3 border border-base-content/10 bg-base-100 rounded-xl'>
+                    <div key={favoriteItem.id} className='flex items-center gap-4 p-3 border border-base-content/10 bg-base-100 rounded-xl'>
 
                       <img src={favoriteItem.image} alt="" className='w-16 h-16 object-cover rounded-lg flex-shrink-0' />
 
@@ -72,7 +74,7 @@ function App() {
                           <p>Bids: {favoriteItem.bidsCount}</p>
                         </div>
                       </div>
-                        <button className='-mt-16'><MdOutlineCancel size={20} /></button>
+                      <button className='-mt-16'><MdOutlineCancel size={20} /></button>
                     </div>
                   )
                 }
