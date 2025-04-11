@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Leica M3 Camera",
+      "description": "A classic 35mm film camera revered by collectors and photographers alike.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 12,
+      "image": "https://i.ibb.co.com/LDVwbMV4/Bid1-min.png"
+    },
+    {
+      "id": 2,
+      "title": "1965 Gibson SG Standard Electric Guitar",
+      "description": "A vintage electric guitar known for its iconic shape and sound.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 18,
+      "image": "https://i.ibb.co.com/tw3C8pP0/Bid2-min.png"
+    },
+    {
+      "id": 3,
+      "title": "Original Apple Macintosh 128K (1984)",
+      "description": "Apple’s first Macintosh computer, launched in 1984.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 21,
+      "image": "https://i.ibb.co.com/vv1mSQs0/Bid3-min.png"
+    },
+    {
+      "id": 4,
+      "title": "Rolex Submariner 16610",
+      "description": "A luxury dive watch with timeless design and exceptional craftsmanship.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 27,
+      "image": "https://i.ibb.co.com/QvGDcLDh/Bid4-min.png"
+    },
+    {
+      "id": 5,
+      "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+      "description": "Rare first edition of the classic American novel.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 9,
+      "image": "https://i.ibb.co.com/67THj5dt/Bid5-min.png"
+    },
+    {
+      "id": 6,
+      "title": "Mid-Century Modern Eames Lounge Chair",
+      "description": "Iconic lounge chair that blends comfort and style.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 14,
+      "image": "https://i.ibb.co.com/bj7NKps0/Bid6-min.png.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Banksy Original Screen Print",
+      "description": "Authentic screen print from the elusive street artist Banksy.",
+      "currentBidPrice": "$2,850",
+      "timeLeft": "2 Days left",
+      "bidsCount": 30,
+      "image": "https://i.ibb.co.com/2xFDLf0/Bid7-min.png"
+    }
+  ]
+  
