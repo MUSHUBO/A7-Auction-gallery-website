@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Auction from './Auction/Auction';
 
-const Auctions = () => {
+const Auctions = ({ handleFavorite }) => {
 
     const [auctions, setAuctions] = useState([]);
-    console.log(auctions);
+    // console.log(auctions);
 
     useEffect(() => {
         fetch("Auctions.json")
@@ -16,7 +16,11 @@ const Auctions = () => {
         <div>
             <div className='all-auction '>
                 {
-                    auctions.map((auction) => <Auction key={auction.id} auction={auction}></Auction>)
+                    auctions.map((auction) => <Auction
+                        key={auction.id}
+                        auction={auction}
+                        handleFavorite={handleFavorite}>
+                    </Auction>)
                 }
             </div>
 
