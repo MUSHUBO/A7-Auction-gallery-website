@@ -16,6 +16,11 @@ function App() {
   }
   // console.log(favoriteItems);
 
+  let totalAmount = 0;
+  favoriteItems.forEach(fav => {
+    totalAmount += Number(fav.currentBidPrice.replace(/[^0-9.-]+/g, ""));
+  });
+
   return (
     <>
       <Navbar></Navbar>
@@ -45,9 +50,7 @@ function App() {
                 </thead>
               </table>
 
-              <Suspense fallback={'Loading...'}>
-                <Auctions handleFavorite={handleFavorite}></Auctions>
-              </Suspense>
+              <Auctions handleFavorite={handleFavorite} favoriteItems={favoriteItems}></Auctions>
             </div>
 
             {/* Favorite Items Section */}
@@ -56,33 +59,36 @@ function App() {
               <h3 className='pt-6 pb-4 border-b font-medium text-3xl flex items-center justify-center'><p><GoHeart /></p><p className=''>Favorite Items</p></h3>
 
               <div className='border-b p-6 space-y-5'>
-                <div className='item-massage'>
-                  <p className='text-2xl font-medium'>No favorites yet</p>
-                  <p>Click the heart icon on any item to add it to your favorites</p>
-                </div>
-
                 {
-                  favoriteItems.map(favoriteItem =>
-                    <div key={favoriteItem.id} className='flex items-center gap-4 p-3 border border-base-content/10 bg-base-100 rounded-xl'>
+                  favoriteItems.length === 0 ? (
+                    <div className='item-massage'>
+                      <p className='text-2xl font-medium'>No favorites yet</p>
+                      <p>Click the heart icon on any item to add it to your favorites</p>
+                    </div>) : (
+                    favoriteItems.map(favoriteItem => (
+                      <div key={favoriteItem.id} className='flex items-center gap-4 p-3 border border-base-content/10 bg-base-100 rounded-xl'>
 
-                      <img src={favoriteItem.image} alt="" className='w-16 h-16 object-cover rounded-lg flex-shrink-0' />
+                        <img src={favoriteItem.image} alt="" className='w-16 h-16 object-cover rounded-lg flex-shrink-0' />
 
-                      <div className='text-left flex flex-col gap-1'>
-                        <h1 className='font-semibold'>{favoriteItem.title}</h1>
-                        <div className='flex gap-6 text-sm text-gray-600'>
-                          <p>{favoriteItem.currentBidPrice}</p>
-                          <p>Bids: {favoriteItem.bidsCount}</p>
+                        <div className='text-left flex flex-col gap-1'>
+                          <h1 className='font-semibold'>{favoriteItem.title}</h1>
+                          <div className='flex gap-6 text-sm text-gray-600'>
+                            <p>{favoriteItem.currentBidPrice}</p>
+                            <p>Bids: {favoriteItem.bidsCount}</p>
+                          </div>
                         </div>
+
+                        <button className='-mt-14 hover:bg-red-50 hover:text-red-400 p-2 rounded-full'>
+                          <MdOutlineCancel size={25} />
+                        </button>
                       </div>
-                      <button className='-mt-16'><MdOutlineCancel size={20} /></button>
-                    </div>
+                    ))
                   )
                 }
-
               </div>
 
               <h3 className='py-6 text-2xl flex justify-between px-8'>
-                Total bids Amount:<span className='font-mono'> $0000 </span>
+                Total bids Amount:<span className='font-mono'> ${totalAmount} </span>
               </h3>
 
             </div>

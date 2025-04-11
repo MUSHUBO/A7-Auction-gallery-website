@@ -1,8 +1,13 @@
 import React from 'react';
 import { GoHeart } from "react-icons/go";
+import { AiFillHeart } from "react-icons/ai";
 
-const Auction = ({ auction, handleFavorite }) => {
-    // console.log(handleFavorite);
+
+const Auction = ({ auction, handleFavorite, favoriteItems }) => {
+    // console.log(favoriteItems);
+
+    const buttonFavorite = favoriteItems.some(item => item.id === auction.id);
+    // console.log(buttonFavorite);
 
     return (
         <div>
@@ -19,8 +24,9 @@ const Auction = ({ auction, handleFavorite }) => {
                                 <div className="flex items-center justify-end gap-14 pr-10">
                                     <span>{auction.currentBidPrice}</span>
                                     <span>{auction.timeLeft}</span>
-                                    <button onClick={() => handleFavorite(auction)}>
-                                        <GoHeart size={25} />
+                                    <button onClick={() => handleFavorite(auction)}
+                                        disabled= {buttonFavorite} > 
+                                        {buttonFavorite ? <AiFillHeart className='text-red-500' size={25} /> : <GoHeart size={25} />}
                                     </button>
                                 </div>
                             </td>
