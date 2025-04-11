@@ -6,6 +6,8 @@ import Navbar from './components/Navbar/Navbar'
 import Auctions from './components/Auctions/Auctions'
 import { GoHeart } from "react-icons/go";
 import { MdOutlineCancel } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
 
   const handleFavorite = (favorite) => {
     setFavoriteItem([...favoriteItems, favorite]);
+    toast('Item Added To Your Favorite List.')
   }
   // console.log(favoriteItems);
 
@@ -51,6 +54,7 @@ function App() {
               </table>
 
               <Auctions handleFavorite={handleFavorite} favoriteItems={favoriteItems}></Auctions>
+              <ToastContainer />
             </div>
 
             {/* Favorite Items Section */}

@@ -9,6 +9,8 @@ const Auction = ({ auction, handleFavorite, favoriteItems }) => {
     const buttonFavorite = favoriteItems.some(item => item.id === auction.id);
     // console.log(buttonFavorite);
 
+
+
     return (
         <div>
             <div className="overflow-x-auto border border-base-content/5 bg-base-100">
@@ -25,9 +27,10 @@ const Auction = ({ auction, handleFavorite, favoriteItems }) => {
                                     <span>{auction.currentBidPrice}</span>
                                     <span>{auction.timeLeft}</span>
                                     <button onClick={() => handleFavorite(auction)}
-                                        disabled= {buttonFavorite} > 
+                                        disabled={buttonFavorite} >
                                         {buttonFavorite ? <AiFillHeart className='text-red-500' size={25} /> : <GoHeart size={25} />}
                                     </button>
+
                                 </div>
                             </td>
                         </tr>
