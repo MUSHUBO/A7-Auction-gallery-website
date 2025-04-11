@@ -27,10 +27,14 @@ const Auction = ({ auction, handleFavorite, favoriteItems }) => {
                                     <span>{auction.currentBidPrice}</span>
                                     <span>{auction.timeLeft}</span>
                                     <button onClick={() => handleFavorite(auction)}
-                                        disabled={buttonFavorite} >
-                                        {buttonFavorite ? <AiFillHeart className='text-red-500' size={25} /> : <GoHeart size={25} />}
+                                        disabled={buttonFavorite}
+                                        
+                                        className={`${buttonFavorite ? 'cursor-not-allowed' : 'cursor-pointer'} `}
+                                    >
+                                        {
+                                            buttonFavorite ? <AiFillHeart className='text-red-500' size={25} /> : <GoHeart className='text-gray-500' size={25} />
+                                        }
                                     </button>
-
                                 </div>
                             </td>
                         </tr>
